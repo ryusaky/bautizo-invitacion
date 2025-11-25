@@ -1,49 +1,56 @@
 # Invitación al Bautizo — Sofía y Amy
 
 Descripción
-- Página estática de invitación para el bautizo de Sofía y Amy.
-- Contiene: portada con texto superpuesto, galería (slider con swipe), fotos centradas, contador hasta el evento, itinerario (misa y recepción) con iconos, dirección, mapa incrustado, sección de padrinos, y audio de fondo.
+- Página estática (HTML/CSS/JS) para la invitación al bautizo de Sofía y Amy.
+- Diseño en tonos dorado/champagne y blanco. Incluye portada, fotos, galería (slider táctil), contador, itinerario, dirección con mapa, padrinos y audio de fondo.
 
 Características principales
-- Hero/Portada con texto superpuesto (título, nombres, fecha y hora).
-- Fotos centradas (Foto 1 / Foto 2).
-- Contador en tiempo real (días, horas, minutos, segundos).
-- Itinerario con iconos (iglesia y fiesta).
-- Dirección con botón para Google Maps.
-- Mapa incrustado (coordenadas: -5.090361, -81.095305).
-- Slider táctil: arrastra con el dedo o mouse para cambiar imágenes (no auto-play).
-- Tarjetas de padrinos personalizadas (estilos dorado/champagne).
-- Audio de fondo: reproduce un MP3 alojado en el proyecto (autoplay puede ser bloqueado por el navegador).
+- Hero/Portada con tarjeta centrada en el pie de la imagen (nombre, fecha y hora).
+- Secciones Foto 1 (Sofía) y Foto 2 (Amy) con overlay de nombre.
+- Slider táctil (swipe) con tarjetas de tamaño variable y marco interior fino. Drag con mouse o dedo; cambia al soltar según desplazamiento.
+- Contador en tiempo real hasta el evento (días, horas, minutos, segundos).
+- Itinerario (Misa / Recepción) con iconos personalizados.
+- Dirección y mapa incrustado (coordenadas: -5.090361, -81.095305).
+- Sección Padrinos con tarjetas personalizadas (gradientes champagne / dorado).
+- Reproductor de audio de fondo con botón de control (autoplay depende de interacción del usuario).
+- Meta tags Open Graph y Twitter Card para vista previa al compartir.
 
 Estructura de archivos
-- index.html — archivo principal.
-- css/style.css — estilos.
-- js/script.js — lógica (contador, slider, audio).
-- img/ — imágenes usadas (portada.png, sofia-main.jpg, amy-main.jpg, sofia-amy-slider1.jpg, sofia-slider2.jpg, amy-slider3.jpg, etc.).
-- audio/musica-fondo.mp3 — audio de fondo.
+- index.html — página principal (OG meta, hero, secciones).
+- css/style.css — estilos y responsive.
+- js/script.js — contador, slider táctil, control de audio.
+- img/ — imágenes: portada.png, sofia-main.jpg, amy-main.jpg, sofia-amy-slider1.jpg, sofia-slider2.jpg, amy-slider3.jpg, favicon.png ...
+- audio/musica-fondo.mp3 — archivo de audio de fondo.
 - README.md — este archivo.
 
 Instalación y uso
-1. Coloca las imágenes en la carpeta `img/` y el mp3 en `audio/musica-fondo.mp3`.
-2. Abrir `index.html` en el navegador: doble clic o desde VS Code Live Server.
-   - Recomendado servir por HTTP para que el iframe de Google Maps funcione correctamente:
-     - Windows / Python: abre terminal en la carpeta del proyecto y ejecuta:
-       - `python -m http.server 8000`
-     - Luego abre: `http://localhost:8000/`
-3. Si el audio no se reproduce automáticamente, haz clic en la página para permitir reproducción.
+1. Colocar imágenes en `img/` y el mp3 en `audio/musica-fondo.mp3`.
+2. Abrir `index.html` con Live Server o servir por HTTP:
+   - Desde la carpeta del proyecto (PowerShell/CMD):
+     - `python -m http.server 8000`
+     - Abrir `http://localhost:8000/`
+3. Para ver la vista previa (Open Graph) la página debe estar publicada en un servidor accesible públicamente.
 
-Ajustes comunes
+Personalización rápida
 - Cambiar fecha/hora del contador: editar `target` en `js/script.js`.
-- Cambiar coordenadas del mapa: editar el `src` del iframe en `index.html`.
-- Ajustar sensibilidad del swipe: variable `swipeThreshold` en `js/script.js`.
-- Imágenes del slider sin recortes: `object-fit: contain` en `.slide` (css/style.css).
+- Cambiar coordenadas del mapa: editar `src` del iframe en `index.html`.
+- Cambiar imagen de vista previa (Open Graph): actualizar `og:image` y `twitter:image` en `<head>` de `index.html`.
+- Ajustar sensibilidad swipe: variable `swipeThreshold` en `js/script.js`.
+- Control de audio: `audio` en `index.html` y comportamiento en `js/script.js`.
 
-Compatibilidad
-- Diseñado responsive para móviles y escritorio.
-- Navegadores recomendados: Chrome, Edge, Firefox (últimas versiones).
+Git / Remoto
+- Inicializar y subir al remoto:
+  - git init
+  - git add .
+  - git commit -m "Initial commit"
+  - git branch -M main
+  - git remote add origin <URL-DEL-REPO>
+  - git push -u origin main
+
+Notas
+- Navegadores móviles bloquean autoplay; el audio se reproducirá tras la primera interacción.
+- Usa imágenes en formato horizontal y recomendable 1200x630px para `og:image`.
+- Si necesitas cambios (estilos, textos, tiempo del slider), indícalo y se aplican rápidamente.
 
 Licencia
-- MIT — usar y modificar libremente, menciona autor si lo deseas.
-
-Contactar / Créditos
-- Proyecto personal de invitación (local). Si necesitas que ajuste estilos, animaciones o comportamiento del slider, modifica `css/style.css` y `js/script.js`, o solicita cambios.
+- MIT (uso y modificación libre).
