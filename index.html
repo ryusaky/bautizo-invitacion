@@ -25,7 +25,18 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <audio id="bg-audio" src="audio/musica-fondo.mp3" autoplay loop></audio>
+  <audio id="bg-audio" src="audio/musica-fondo.mp3" muted loop></audio>
+  
+  <button id="audio-toggle" class="audio-btn muted" aria-label="Activar/Desactivar música" aria-pressed="false">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <!-- speaker -->
+      <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+      <!-- small wave -->
+      <path d="M19 8a5 5 0 0 1 0 8"></path>
+      <!-- large wave -->
+      <path d="M15 5a9 9 0 0 1 0 14"></path>
+    </svg>
+  </button>
 
   <main class="card">
     <section class="hero portada">
@@ -38,11 +49,17 @@
     </section>
 
     <section class="centered photo-full">
-      <img src="img/sofia-main.jpg" alt="Foto 1">
+      <div class="photo-card" aria-label="Foto de Sofía">
+        <img src="img/sofia-main.jpg" alt="Sofía">
+        <div class="photo-label">Sofía Paz Jacinto</div>
+      </div>
     </section>
-
+    
     <section class="centered photo-full">
-      <img src="img/amy-main.jpg" alt="Foto 2">
+      <div class="photo-card" aria-label="Foto de Amy">
+        <img src="img/amy-main.jpg" alt="Amy">
+        <div class="photo-label">Amy Paz Jacinto</div>
+      </div>
     </section>
 
     <section class="countdown">

@@ -105,12 +105,38 @@ document.addEventListener('DOMContentLoaded', ()=>{
   // Mostrar primera imagen al iniciar
   if(slides.length) showSlide(0);
 
-  // Attempt to play audio
+  // Attempt to play audio (browsers may block autoplay)
   const audio = document.getElementById('bg-audio');
-  if(audio){
+  const audioToggle = document.getElementById('audio-toggle');
+  
+  if(audio && audioToggle){
     audio.volume = 0.55;
-    const tryPlay = ()=> audio.play().catch(()=>{});
-    document.addEventListener('click', tryPlay, {once:true});
+    
+    // Función para intentar reproducir
+    const tryPlay = ()=> {
+      audio.muted = false;
+      audio.play().catch(()=>{
+        console.log('Autoplay bloqueado');
+      });
+    };
+    
+    // Intentar reproducir al cargar
     tryPlay();
+    
+    // Si falla, esperar a cualquier interacción del usuario
+    document.addEventListener('click', tryPlay, {once:true});
+    document.addEventListener('touchstart', tryPlay, {once:true});
+    document.addEventListener('keydown', tryPlay, {once:true});
+    
+    // Toggle audio con botón
+    audioToggle.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      audio.muted = !audio.muted;
+      audioToggle.classList.toggle('muted', audio.muted);
+      if(!audio.muted) audio.play();
+    });
+    
+    // Inicializar estado del botón
+    audioToggle.classList.toggle('muted', audio.muted);
   }
 });

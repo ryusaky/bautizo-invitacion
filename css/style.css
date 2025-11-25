@@ -205,7 +205,7 @@ body{
   position:absolute;
   width:auto;
   height:auto;
-  max-width:85%;
+  max-width:90%;
   max-height:280px;
   object-fit:contain;
   object-position:center;
@@ -315,6 +315,53 @@ body{
   border:0;
 }
 
+/* Photo card with centered bottom label (Sofía / Amy) */
+.photo-card{
+  position:relative;
+  display:inline-block;
+  width:92%;
+  max-width:760px;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 8px 30px rgba(0,0,0,0.08);
+  background:var(--white);
+}
+.photo-card img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:cover;
+  object-position:center;
+}
+.photo-label{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:14px;
+  z-index:3;
+  background:rgba(0,0,0,0.48);
+  color:var(--gold);
+  padding:8px 14px;
+  border-radius:8px;
+  font-weight:700;
+  box-shadow:0 6px 18px rgba(0,0,0,0.18);
+  text-shadow:0 1px 2px rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+  pointer-events:none;
+  font-size: 44px;
+  margin: 0;
+}
+
+/* Responsive tweaks */
+@media (max-width:720px){
+  .photo-card{width:96%}
+  .photo-label{padding:7px 12px;font-size:14px;bottom:12px}
+}
+@media (max-width:480px){
+  .photo-card{width:100%}
+  .photo-label{padding:6px 10px;font-size:13px;bottom:10px}
+}
+
 @media (max-width:720px){
   .card.padrino{min-width:200px;padding:20px 16px}
   .card.padrino h3{font-size:16px}
@@ -379,4 +426,45 @@ body{
 @keyframes pulse {
   0%, 100% { opacity:0.8; }
   50% { opacity:1; }
+}
+
+.audio-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  z-index:100;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:var(--gold);
+  color:var(--white);
+  border:none;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 12px rgba(201,154,63,0.3);
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.audio-btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 6px 16px rgba(201,154,63,0.4);
+}
+
+.audio-btn:active{
+  transform:scale(0.95);
+}
+
+.audio-btn.muted svg{
+  opacity:0.5;
+}
+
+@media (max-width:480px){
+  .audio-btn{
+    width:45px;
+    height:45px;
+    bottom:16px;
+    right:16px;
+  }
 }
