@@ -31,10 +31,11 @@ body{
   position:relative;
   height:420px;
   display:flex;
-  align-items:center;
+  align-items:flex-end;
   justify-content:center;
   overflow:hidden;
   background:linear-gradient(180deg, rgba(201,154,63,0.12), rgba(255,255,255,0.02));
+  padding-bottom:20px;
 }
 .portada-img{
   position:absolute;
@@ -44,6 +45,7 @@ body{
   object-fit:cover;
   filter:grayscale(10%) contrast(0.95);
   transform:scale(1.06);
+  z-index:1;
 }
 .overlay{
   position:relative;
@@ -51,14 +53,17 @@ body{
   text-align:center;
   color:var(--white);
   text-shadow:0 3px 16px rgba(0,0,0,0.45);
-  background:linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.05));
-  padding:24px 18px;
+  background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.5));
+  padding:0px 24px;
   border-radius:12px;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
+  width:auto;
+  max-width:500px;
+  box-sizing:border-box;
 }
 .overlay h1{font-size:44px;margin:0;font-weight:700;color:var(--gold)}
-.overlay h2{margin:6px 0 4px;font-size:22px}
-.overlay .fecha{opacity:0.95}
+.overlay h2{margin:8px 0 6px;font-size:24px}
+.overlay .fecha{opacity:0.95;font-size:14px}
 
 /* centered photos */
 .centered.photo-full{
@@ -319,18 +324,26 @@ body{
   .itinerary .items{gap:12px}
   .map{margin:12px}
   .map .map-wrap{height:280px}
+  .portada{height:360px;padding-bottom:16px}
+  .overlay{padding:20px 18px;max-width:420px}
+  .overlay h1{font-size:34px}
+  .overlay h2{font-size:20px}
 }
 
 @media (max-width:480px){
   .card{margin:14px;border-radius:10px}
   .overlay h1{font-size:28px}
-  .overlay h2{font-size:18px}
+  .overlay h2{font-size:16px}
   .slider-stage{min-height:260px}
   .slide{max-width:92%;max-height:200px}
   .timer div{min-width:70px;padding:10px 14px;font-size:14px}
   .timer span{font-size:22px}
   .timer small{font-size:11px}
-  .portada{height:340px}
+  .portada{height:300px;padding-bottom:12px}
+  .overlay{padding:0px 14px;max-width:280px}
+  .overlay h1{font-size:28px}
+  .overlay h2{font-size:16px}
+  .overlay .fecha{font-size:12px}
   .godparents .cards{gap:12px}
   .card.padrino{min-width:180px}
   .itinerary .items{gap:10px}
