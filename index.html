@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Invitación al Bautizo de Sofia y Amy</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <audio id="bg-audio" src="audio/musica-fondo.mp3" autoplay loop></audio>
+
+  <main class="card">
+    <section class="hero portada">
+      <img src="img/portada.png" alt="Foto de portada" class="portada-img">
+      <div class="overlay">
+        <h1>Bautizo</h1>
+        <h2>Sofia y Amy</h2>
+        <p class="fecha">03 de diciembre de 2025 · 03:00 pm</p>
+      </div>
+    </section>
+
+    <section class="centered photo-full">
+      <img src="img/sofia-main.jpg" alt="Foto 1">
+    </section>
+
+    <section class="centered photo-full">
+      <img src="img/amy-main.jpg" alt="Foto 2">
+    </section>
+
+    <section class="countdown">
+      <h2>Faltan</h2>
+      <div class="timer" id="countdown">
+        <div><span id="days">0</span><small>Días</small></div>
+        <div><span id="hours">0</span><small>Horas</small></div>
+        <div><span id="minutes">0</span><small>Min</small></div>
+        <div><span id="seconds">0</span><small>Seg</small></div>
+      </div>
+    </section>
+
+    <section class="itinerary">
+      <h2>Itinerario</h2>
+      <div class="items">
+        <div class="item" aria-label="Misa 02:00 pm">
+          <div class="icon" aria-hidden="true">
+            <!-- Iglesia con cruz -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-church" aria-hidden="true" style="width:40px;height:40px;">
+              <path d="M10 9h4"></path>
+              <path d="M12 7v5"></path>
+              <path d="M14 22v-4a2 2 0 0 0-4 0v4"></path>
+              <path d="M18 22V5.618a1 1 0 0 0-.553-.894l-4.553-2.277a2 2 0 0 0-1.788 0L6.553 4.724A1 1 0 0 0 6 5.618V22"></path>
+              <path d="m18 7 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.618a1 1 0 0 1 .553-.894L6 7"></path>
+            </svg>
+          </div>
+          <div>
+            <h3>Misa</h3>
+            <p>02:00 pm hrs.</p>
+          </div>
+        </div>
+
+        <div class="item" aria-label="Recepción 05:00 pm">
+          <div class="icon" aria-hidden="true">
+            <!-- Party popper / confetti -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-party-popper" aria-hidden="true" style="width:40px;height:40px;">
+              <path d="M5.8 11.3 2 22l10.7-3.79"></path>
+              <path d="M4 3h.01"></path>
+              <path d="M22 8h.01"></path>
+              <path d="M15 2h.01"></path>
+              <path d="M22 20h.01"></path>
+              <path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"></path>
+              <path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17"></path>
+              <path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7"></path>
+              <path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3>Recepción</h3>
+            <p>05:00 pm hrs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="address">
+      <h2>Dirección</h2>
+      <p>Urb. San Isidro Mz D Lote 1 - 2° Piso, al costado del colegio Cristo Rey</p>
+      <a class="btn" href="https://maps.google.com/?q=-5.090361,-81.095305" target="_blank">Ver en Maps</a>
+    </section>
+
+    <section class="map">
+      <h2>Mapa</h2>
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps?q=-5.090361,-81.095305&hl=es&z=16&output=embed"
+          allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <section class="slider">
+      <h2>Galería</h2>
+      <div class="slider-stage" id="slider">
+        <img src="img/sofia-amy-slider1.jpg" class="slide" alt="">
+        <img src="img/sofia-slider2.jpg" class="slide" alt="">
+        <img src="img/amy-slider3.jpg" class="slide" alt="">
+        <span class="slider-hint">Desliza para ver m&aacute;s fotos</span>
+      </div>
+    </section>
+
+    <section class="godparents">
+      <h2>Padrinos de Sofia</h2>
+      <div class="cards">
+        <div class="card padrino">
+          <small class="role">Madrina</small>
+          <h3>Miriam Marleny Salvador Padilla</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="godparents">
+      <h2>Padrinos de Amy</h2>
+      <div class="cards">
+        <div class="card padrino">
+          <small class="role">Madrina</small>
+          <h3>Liseth Giulisa Olivas Parco</h3>
+        </div>
+        <div class="card padrino">
+          <small class="role">Padrino</small>
+          <h3>Elmer Roger Tineo Vasquez</h3>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
